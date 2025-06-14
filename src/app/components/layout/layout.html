@@ -1,0 +1,14 @@
+<div class="flex justify-center h-screen">
+  <div class="flex-col">
+    <app-form (tarefaSalva)="tarefaSalvaService($event)"></app-form>
+    <p class="p-2 m-3 text-center">
+      CLique duas vezes para concluir uma tarefa.
+      <mat-icon class="custom-icon">done_outline</mat-icon>
+    </p>
+    <app-lista
+      [tarefas]="tarefasService"
+      (tarefaDeletada)="tarefaDeletadaService($event)"
+      (tarefaConcluido)="tarefaConcluidaService($event)"
+    ></app-lista>
+  </div>
+</div>

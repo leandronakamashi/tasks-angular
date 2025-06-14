@@ -1,0 +1,29 @@
+@for(tarefas of tarefas; track tarefas){
+<div
+  class="cursor-pointer p-2.5 bg-white border border-gray-200 rounded-lg shadow-md mb-4 flex justify-between"
+>
+  @if(tarefas.concluido){
+  <mat-icon class="custom-icon">done_outline</mat-icon>
+
+  }
+  <div class="p-2.5" (dblclick)="onConcluido(tarefas)">
+    <p>{{tarefas.nome}}</p>
+    <p>Tarefa: {{tarefas.tarefa}}</p>
+  </div>
+  <div class="flex py-3 gap-2">
+    <button
+      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      (click)="editarTarefa(tarefas)"
+    >
+      Editar
+    </button>
+
+    <button
+      class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+      (click)="deleteTarefa(tarefas)"
+    >
+      Remover
+    </button>
+  </div>
+</div>
+}
