@@ -4,13 +4,13 @@
       "id": "1",
       "nome": "Estudar Angular",
       "tarefa": "tarefa 01",
-      "concluido": false
+      "concluido": true
     },
     {
       "id": "2",
       "nome": "Estudar Node",
       "tarefa": "tarefa 02",
-      "concluido": false
+      "concluido": true
     },
     {
       "id": "7c10",
