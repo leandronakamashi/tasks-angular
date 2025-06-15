@@ -32,10 +32,7 @@ export class Service {
   // }
 
   // ------- usando uma variavel array ---------------
-  tarefas: any[] = [
-    { id: 1, nome: 'Tarefa 1', tarefa: 'Fazer algo', concluido: false },
-    { id: 2, nome: 'Tarefa 2', tarefa: 'Fazer outra coisa', concluido: false },
-  ];
+  tarefas: any[] = [];
   tarefaEdit: any;
 
   getTarefas() {
@@ -43,20 +40,24 @@ export class Service {
   }
 
   salvarTarefa(novaTarefa: any) {
+    this.tarefaEdit = novaTarefa.id = Math.random()
+      .toString(36)
+      .substring(2, 15);
     this.tarefas.push(novaTarefa);
-    return console.log('criou uma nova tarefa no array=' + novaTarefa);
+    return console.log('criou uma nova tarefa no array=' + novaTarefa.id);
   }
 
   removerTarefa(tarefa: any) {
     console.log('removendo tarefa no service:', tarefa);
     this.tarefas = this.tarefas.filter((t) => t.id !== tarefa.id);
-    return console.log('tarefa removida com sucesso:', tarefa);
+
+    return console.log('filtrou' + this.tarefas);
   }
 
   editiarTarefa(novaTarefa: any) {
     this.tarefaEdit = this.tarefas.filter((t) => t.id === novaTarefa.id);
     this.tarefaEdit.concluido = !this.tarefaEdit.concluido;
 
-    return console.log('criou uma nova tarefa no array=' + novaTarefa);
+    return console.log('editou uma nova tarefa no array=' + novaTarefa);
   }
 }

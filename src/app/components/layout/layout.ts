@@ -64,6 +64,7 @@ export class Layout implements OnInit {
   // deletar tarefa usando array
   tarefaDeletadaService(tarefa: any) {
     this.service.removerTarefa(tarefa);
+    this.tarefasService = this.service.getTarefas();
   }
   // Usando uma variável array para salvar a tarefa
   tarefaSalvaService(frm: any) {
