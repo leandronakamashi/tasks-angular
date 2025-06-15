@@ -8,23 +8,21 @@ import { Observable } from 'rxjs';
 export class Service {
   constructor(private client: HttpClient) {}
 
+  //apiUrl = 'http://localhost:3000/tarefas';
+  apiUrl = 'https://json-server-versel-phi.vercel.app/tarefas';
+
   getTarefas(): Observable<any> {
-    return this.client.get('http://localhost:3000/tarefas');
+    return this.client.get(this.apiUrl);
   }
 
   removerTarefa(tarefa: any): Observable<any> {
-    console.log(
-      `removendo tarefa no service: http://localhost:3000/tarefas/${tarefa.id}`
-    );
-    // return this.client.delete(`http://localhost:3000/tarefas/${tarefa.id}`);
-    return this.client.delete(`http://localhost:3000/tarefas/${tarefa.id}`);
+    console.log(`removendo tarefa no service: ${this.apiUrl}/${tarefa.id}`);
+
+    return this.client.delete(`${this.apiUrl}/${tarefa.id}`);
   }
 
   editiarTarefa(tarefa: any): Observable<any> {
-    return this.client.put(
-      `http://localhost:3000/tarefas/${tarefa.id}`,
-      tarefa
-    );
+    return this.client.put(`${this.apiUrl}/${tarefa.id}`, tarefa);
   }
 
   salvarTarefa(frm: any): Observable<any> {

@@ -11,12 +11,6 @@
       "nome": "Estudar Node",
       "tarefa": "tarefa 02",
       "concluido": true
-    },
-    {
-      "id": "7c10",
-      "nome": "Leandro Nakamashi",
-      "tarefa": "dsdsds",
-      "concluido": false
     }
   ]
 }
