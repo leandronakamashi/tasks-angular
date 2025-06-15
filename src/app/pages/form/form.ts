@@ -17,10 +17,9 @@ export class Form {
   frm: FormGroup;
   @Output() tarefaSalva = new EventEmitter<any>();
 
-  id = Math.random().toString(36).substring(2, 15);
   constructor(private FormBuilder: FormBuilder) {
     this.frm = this.FormBuilder.group({
-      id: [this.id],
+      id: [Math.random().toString(36).substring(2, 15)],
       nome: ['', [Validators.required]],
       tarefa: ['', [Validators.required]],
       concluido: [false],
