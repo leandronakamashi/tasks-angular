@@ -1,22 +1,3 @@
 {
-  "tarefas": [
-    {
-      "id": "1",
-      "nome": "Estudar Angular",
-      "tarefa": "tarefa 01",
-      "concluido": true
-    },
-    {
-      "id": "",
-      "nome": "Fazer compras",
-      "tarefa": "sdsadas",
-      "concluido": false
-    },
-    {
-      "id": null,
-      "nome": "Fazer compras",
-      "tarefa": "sdsds",
-      "concluido": null
-    }
-  ]
+  "tarefas": []
 }

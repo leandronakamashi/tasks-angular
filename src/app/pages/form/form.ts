@@ -16,18 +16,20 @@ import { Service } from '../../components/service/service';
 export class Form {
   frm: FormGroup;
   @Output() tarefaSalva = new EventEmitter<any>();
-  tarefas: any;
 
+  id = Math.random().toString(36).substring(2, 15);
   constructor(private FormBuilder: FormBuilder) {
     this.frm = this.FormBuilder.group({
+      id: [this.id],
       nome: ['', [Validators.required]],
       tarefa: ['', [Validators.required]],
       concluido: [false],
     });
   }
+
   salvar() {
     this.tarefaSalva.emit(this.frm.value);
-    console.log('salvou:', this.frm.value);
+    console.log('salvou:', this.frm);
     this.frm.reset();
   }
 }
