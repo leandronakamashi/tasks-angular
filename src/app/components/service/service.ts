@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class Service {
   constructor(private client: HttpClient) {}
 
-  //apiUrl = 'http://localhost:3000/tarefas';
-  apiUrl = 'https://json-server-versel-phi.vercel.app/tarefas';
+  apiUrl = 'http://localhost:3000/tarefas';
+  //apiUrl = 'https://json-server-versel-phi.vercel.app/tarefas';
 
   getTarefas(): Observable<any> {
     return this.client.get(this.apiUrl);
