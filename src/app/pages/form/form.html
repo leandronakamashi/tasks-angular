@@ -3,7 +3,7 @@
   <form class="space-y-4" id="formulario" [formGroup]="frm">
     <div>
       <label for="nome" class="block text-gray-700"
-        >Nome: @if(frm.value.nome === ""){<span class="obrigatorio"
+        >Nome: @if(!frm.get('nome')?.value){<span class="obrigatorio"
           >*Obrigatório</span
         >}</label
       >
@@ -17,7 +17,7 @@
       />
 
       <label for="tarefa" class="block text-gray-700 mt-2"
-        >Tarefa:@if(frm.value.tarefa === ""){<span class="obrigatorio"
+        >Tarefa:@if(!frm.get('tarefa')?.value){<span class="obrigatorio"
           >*Obrigatório</span
         >}</label
       >
