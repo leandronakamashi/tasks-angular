@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Tarefa } from './../../pages/form/Tarefa';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  signal,
+} from '@angular/core';
 import { Form } from '../../pages/form/form';
 import { Lista } from '../../pages/lista/lista';
 import { Service } from '../service/service';

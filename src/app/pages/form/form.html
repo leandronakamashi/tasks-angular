@@ -2,29 +2,42 @@
   <h2 class="text-2xl font-semibold mb-4">Cadastro de Tarefas</h2>
   <form class="space-y-4" id="formulario" [formGroup]="frm">
     <div>
-      <label for="nome" class="block text-gray-700">Name:</label>
+      <label for="nome" class="block text-gray-700"
+        >Nome: @if(frm.value.nome === ""){<span class="obrigatorio"
+          >*Obrigatório</span
+        >}</label
+      >
       <input
         type="text"
-        id="name"
+        id="nome"
         class="w-full p-2 border border-gray-300 rounded"
         placeholder="Nome da tarefa"
         formControlName="nome"
-        autocomplete="nome"
+        required
       />
-      <label for="tarefa" class="block text-gray-700 mt-2">Tarefa:</label>
+
+      <label for="tarefa" class="block text-gray-700 mt-2"
+        >Tarefa:@if(frm.value.tarefa === ""){<span class="obrigatorio"
+          >*Obrigatório</span
+        >}</label
+      >
       <input
         type="text"
         id="tarefa"
         class="w-full p-2 border border-gray-300 rounded"
         placeholder="Digite a tarefa"
         formControlName="tarefa"
-        autocomplete="tarefa"
+        required
       />
     </div>
+
     <button
-      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      [ngClass]="{'hover:bg-blue-600':frm.value.nome && frm.value.tarefa}"
+      type="submit"
+      class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
       id="btnEnviar"
       (click)="salvar()"
+      [disabled]="frm.invalid"
     >
       Enviar
     </button>

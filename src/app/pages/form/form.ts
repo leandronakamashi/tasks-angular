@@ -6,10 +6,11 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Service } from '../../components/service/service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './form.html',
   styleUrl: './form.css',
 })
@@ -20,8 +21,8 @@ export class Form {
   constructor(private FormBuilder: FormBuilder) {
     this.frm = this.FormBuilder.group({
       id: [],
-      nome: ['', [Validators.required]],
-      tarefa: ['', [Validators.required]],
+      nome: ['', Validators.required],
+      tarefa: ['', Validators.required],
       concluido: [false],
     });
   }
